@@ -21,6 +21,8 @@ public class Customer {
         this.email = email;
     }
 
+    public Customer(){}
+
     // Getters and Setters
     public int getId() {
         return id;

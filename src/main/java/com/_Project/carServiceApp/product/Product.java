@@ -1,11 +1,10 @@
-/*
-package com._Project.carServiceApp.service;
+package com._Project.carServiceApp.product;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name= "serviceDb")
-public class Service {
+@Table(name= "productDb")
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int serviceId;
@@ -17,9 +16,9 @@ public class Service {
     private float price;
 
 
-    public Service(){} //default constructor
+    public Product(){} //default constructor
 
-    public Service(int serviceid, int shopid, int productId, String name, float price){
+    public Product(int serviceid, int shopid, int productId, String name, float price){
         this.serviceId= serviceid;
         this.shopId= shopid;
         this.name = name;
@@ -55,4 +54,3 @@ public class Service {
         return price;
     }
 }
-*/
