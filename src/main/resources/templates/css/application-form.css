@@ -1,0 +1,73 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 800px; /* Maximum width for the main content */
+    margin: 30px auto; /* Center the main content */
+    padding: 20px; /* Padding inside main */
+    background-color: white; /* White background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h2 {
+    margin-bottom: 15px; /* Space below headings */
+    color: #007BFF; /* Blue color for headings */
+}
+
+/* Form Styles */
+form {
+    background: white; /* White background for forms */
+    padding: 20px; /* Inner padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 20px; /* Space below the form */
+}
+
+label {
+    display: block; /* Labels on separate lines */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Inner padding */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+button {
+    background-color: #df4881; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px 15px; /* Inner padding for buttons */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #c430d7; /* Darker button color on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center; /* Center footer text */
+    padding: 10px 0; /* Padding for footer */
+    background-color: rgba(0, 0, 255, 0.8); /* Same as header */
+    color: white; /* White text color */
+    position: relative; /* Allow footer to stay at the bottom */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
+}

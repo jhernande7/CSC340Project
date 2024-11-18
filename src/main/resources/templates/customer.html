@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="css/customer.css">
 </head>
 <body>
-
+<div class="header">
+    <img src="images/logo.png" alt="logo" class="logo">
+    <h1>Welcome, [Customer Name]</h1>
+    <nav>
+        <a href="home.html">Home</a>
+    </nav>
+</div>
+<div class="container">
+    <div class="review-section">
+        <h2>Your Reviews</h2>
+        <ul id="reviews">
+            <!-- Example reviews -->
+            <li>"Great service at ABC Auto!" - 5⭐</li>
+            <li>"Quick and reliable." - 4⭐</li>
+        </ul>
+    </div>
+    <div class="shop-section">
+        <h2>Nearby Shops</h2>
+        <div id="shops">
+            <!-- Example shops -->
+            <div class="shop-card">
+                <h3>ABC Auto Shop</h3>
+                <p>Distance: 2 miles</p>
+                <p>Services: Car wash, Repairs</p>
+            </div>
+            <div class="shop-card">
+                <h3>XYZ Mechanics</h3>
+                <p>Distance: 3.5 miles</p>
+                <p>Services: Repairs, Oil Change</p>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

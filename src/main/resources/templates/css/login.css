@@ -1,0 +1,58 @@
+body {
+    background-color: #f9f9f9; /* Light background */
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+}
+
+header {
+    background-color: rgba(0, 0, 255, 0.8); /* Blue header */
+    color: white;
+    padding: 20px;
+    text-align: center; /* Center text in header */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements */
+    margin-top: 50px; /* Space from the top */
+}
+
+form {
+    background: white; /* White background for the form */
+    padding: 20px; /* Inner padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+label {
+    display: block; /* Labels on separate lines */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 300px; /* Fixed width for inputs */
+    padding: 10px; /* Inner padding for inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+button {
+    background-color: #df4881; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px 15px; /* Inner padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #c430d7; /* Darker button color on hover */
+}
+
+.info-message {
+    margin-top: 15px; /* Space above the message */
+    color: #333; /* Darker color for visibility */
+    text-align: center; /* Center the message */
+}

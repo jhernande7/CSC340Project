@@ -21,51 +21,41 @@ h2 {
     color: #007BFF; /* Blue color for headings */
 }
 
-/* Job Listing Styles */
-.job-listing {
-    margin-top: 20px; /* Space above job listings */
-}
-
-.job-post {
-    border: 1px solid #ddd; /* Light border around job posts */
-    padding: 15px; /* Inner padding */
+/* Form Styles */
+form {
+    background: white; /* White background for forms */
+    padding: 20px; /* Inner padding */
     border-radius: 5px; /* Rounded corners */
-    margin-bottom: 15px; /* Space below each job post */
-    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 20px; /* Space below the form */
 }
 
-.job-post:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
+label {
+    display: block; /* Labels on separate lines */
+    margin-bottom: 5px; /* Space below labels */
 }
 
-.job-description {
-    display: none; /* Initially hide the job descriptions */
-    margin-top: 10px; /* Space above job description */
-}
-
-.apply-btn {
-    background-color: #007BFF; /* Blue button */
-    color: white; /* Text color */
-    border: none; /* No border */
-    padding: 10px 15px; /* Inner padding for buttons */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Inner padding */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ddd; /* Light border */
     border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin-top: 10px; /* Space above the button */
 }
 
-.apply-now {
-    display: inline-block; /* Display as a block */
-    margin-top: 10px; /* Space above the button */
+button {
     background-color: #df4881; /* Button color */
     color: white; /* Text color */
     border: none; /* No border */
     padding: 10px 15px; /* Inner padding for buttons */
     border-radius: 4px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-.apply-now:hover {
+button:hover {
     background-color: #c430d7; /* Darker button color on hover */
 }
 

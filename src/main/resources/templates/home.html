@@ -2,9 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a TechNet Shop Near You</title>
+  <link rel="stylesheet" href="css/home.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwXZuLAz7Cb00nKp-tRlyZggRMTj3J7UQ&callback=initMap"
+          async defer></script>
+  <style>
+  </style>
 </head>
 <body>
+<div class="hero">
+  <img src="images/logo.png" class="logo" alt="My Logo"> <!-- Logo on the left -->
 
+  <nav>
+    <ul>
+      <li><a href="menu.html">Find a Shop</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="careers.html">Careers</a></li>
+    </ul>
+    <div class="auth-buttons"> <!-- Added div for buttons -->
+      <div class="dropdown">
+        <a href="#" class="auth-btn">
+          <img src="images/user-icon.png" alt="User Icon" class="user-icon"> Log In / Sign Up
+        </a>
+        <div class="dropdown-content">
+          <a href="provider-login.html">Provider Login</a>
+          <a href="customer-login.html">Customer Login</a> <!-- Placeholder for Customer Login -->
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <img src="images/FamilyPic.jpg" class="family-pic" alt="Family Picture"> <!-- Family picture below the header -->
+
+  <div class="input-container">
+    <h1>Find a Shop Near You</h1>
+    <input type="text" placeholder="Zip Code, City, or Address" class="zip-input">
+    <button class="find-btn">Go</button>
+  </div>
+
+  <!-- this will be the start of the google maps api -->
+  <div id="map"></div>
+  <script>
+    function initMap (){
+       const location = {lat: 36.0689, lng: -79.8102};
+       const map = new google.maps.Map(document.getElementById("map"),{
+        zoom: 10,
+        center: location,
+       });
+    }
+  </script>
+</div>
 </body>
 </html>

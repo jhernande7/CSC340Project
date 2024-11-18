@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!--
+
+    Jonathan add your customer login code here... feel free to replace it with mine it's
+    just here as a place holder until i don't get your code.
+
+    Thank U
+
+    -->
+
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="customer-login.js" defer></script> <!-- Link to the external JavaScript file -->
 </head>
 <body>
+<header>
+    <h1>Customer Login</h1>
+</header>
 
+<main>
+    <form id="customerLoginForm">
+        <label for="customerEmail">Email:</label>
+        <input type="text" id="customerEmail" name="customerEmail" required>
+
+        <label for="customerPassword">Password:</label>
+        <input type="password" id="customerPassword" name="customerPassword" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p class="info-message">If you don't have an account, please contact support to register.</p>
+</main>
+
+<footer>
+    <p>&copy; 2024 Car Service Finder</p>
+</footer>
 </body>
 </html>
