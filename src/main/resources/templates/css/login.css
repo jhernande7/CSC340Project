@@ -56,3 +56,9 @@ button:hover {
     color: #333; /* Darker color for visibility */
     text-align: center; /* Center the message */
 }
+.logo{
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            height: 50px;
+}
