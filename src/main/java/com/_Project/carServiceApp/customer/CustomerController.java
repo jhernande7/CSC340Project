@@ -72,7 +72,7 @@ public class CustomerController {
     public String showUpdateForm(@PathVariable int customerid, Model model){
         Customer customer = customerService.getCusById(customerid).orElseThrow(() -> new RuntimeException("Could not find customer"));
         model.addAttribute("customer", customer);
-        return "customer";
+        return "customer-signup";
     }
 
     @PostMapping("/update")
