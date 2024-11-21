@@ -1,0 +1,63 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+    background-color: #f3f4f6; /* Light gray background */
+    color: #333; /* Dark text for readability */
+}
+
+/* Header Styles */
+header {
+    background-color: #007BFF; /* Blue header */
+    color: white; /* White text color */
+    padding: 20px; /* Padding around the header */
+    text-align: center; /* Center text in the header */
+}
+
+nav a {
+    color: white; /* White text for links */
+    margin: 0 15px; /* Space between links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: 500; /* Medium font weight */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+    color: #ffc107; /* Change color on hover for visibility */
+}
+
+/* Main Content Styles */
+main {
+    max-width: 800px; /* Maximum width for the main content */
+    margin: 30px auto; /* Center the main content */
+    padding: 20px; /* Padding inside main */
+    background-color: white; /* White background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h2 {
+    margin-bottom: 15px; /* Space below headings */
+    color: #007BFF; /* Blue color for headings */
+}
+
+section {
+    margin-bottom: 30px; /* Space between sections */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center; /* Center footer text */
+    padding: 10px 0; /* Padding for footer */
+    background-color: #007BFF; /* Same as header */
+    color: white; /* White text color */
+    position: relative; /* Allow footer to stay at the bottom */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
+}
