@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Car Service Finder</title>
+    <link rel="stylesheet" href="css/careers.css"> <!-- Link to the careers CSS -->
+    <script src="careers.js" defer></script> <!-- Link to the careers JavaScript -->
+</head>
+<body>
+<header>
+    <img src="images/logo.png" class="logo" alt="My Logo"> <!-- Logo on the left -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+        </ul>
+
+
+    </nav>
+</header>
+
+<main>
+    <h2>Career Opportunities</h2>
+    <div class="job-listing">
+        <div class="job-post" id="frontend-dev">
+            <h3>Frontend Developer</h3>
+            <button class="apply-btn" onclick="toggleDescription('frontend-dev')">View Description</button>
+            <div class="job-description">
+                <p><strong>Responsibilities:</strong></p>
+                <ul>
+                    <li>Develop user-facing features.</li>
+                    <li>Ensure the technical feasibility of UI/UX designs.</li>
+                    <li>Optimize applications for maximum speed and scalability.</li>
+                    <li>Collaborate with other team members and stakeholders.</li>
+                </ul>
+                <p><strong>Requirements:</strong></p>
+                <ul>
+                    <li>Proficient understanding of web markup, including HTML5 and CSS3.</li>
+                    <li>Basic understanding of server-side CSS pre-processing platforms.</li>
+                    <li>Good understanding of JavaScript frameworks (e.g., React, Angular).</li>
+                    <li>Experience with responsive and adaptive design.</li>
+                </ul>
+                <a href="application-form.html" class="apply-now">Apply Now</a>
+            </div>
+        </div>
+
+        <div class="job-post" id="backend-dev">
+            <h3>Backend Developer</h3>
+            <button class="apply-btn" onclick="toggleDescription('backend-dev')">View Description</button>
+            <div class="job-description">
+                <p><strong>Responsibilities:</strong></p>
+                <ul>
+                    <li>Develop and maintain server-side applications.</li>
+                    <li>Design and manage databases.</li>
+                    <li>Implement APIs and integrate with frontend technologies.</li>
+                    <li>Ensure security and data protection.</li>
+                </ul>
+                <p><strong>Requirements:</strong></p>
+                <ul>
+                    <li>Proficiency in server-side programming languages (e.g., Node.js, Python, Ruby).</li>
+                    <li>Experience with database management systems (e.g., MySQL, MongoDB).</li>
+                    <li>Understanding of RESTful services and API design.</li>
+                    <li>Strong problem-solving skills and attention to detail.</li>
+                </ul>
+                <a href="application-form.html" class="apply-now">Apply Now</a>
+            </div>
+        </div>
+
+        <div class="job-post" id="ui-ux-designer">
+            <h3>UI/UX Designer</h3>
+            <button class="apply-btn" onclick="toggleDescription('ui-ux-designer')">View Description</button>
+            <div class="job-description">
+                <p><strong>Responsibilities:</strong></p>
+                <ul>
+                    <li>Create user-centered designs by understanding business requirements.</li>
+                    <li>Conduct user research and testing.</li>
+                    <li>Collaborate with developers to implement and refine designs.</li>
+                    <li>Produce wireframes, storyboards, and user flows.</li>
+                </ul>
+                <p><strong>Requirements:</strong></p>
+                <ul>
+                    <li>Proficiency in design software (e.g., Adobe XD, Sketch, Figma).</li>
+                    <li>Strong portfolio showcasing design skills and process.</li>
+                    <li>Excellent communication skills and attention to detail.</li>
+                    <li>Understanding of user experience principles and best practices.</li>
+                </ul>
+                <a href="application-form.html" class="apply-now">Apply Now</a>
+            </div>
+        </div>
+
+        <!-- Add more job postings here as needed -->
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Car Service Finder</p>
+</footer>
+</body>
+</html>
