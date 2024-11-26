@@ -3,7 +3,7 @@ package com._Project.carServiceApp.provider;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name ="providersdb")
+@Table(name = "providersdb")
 public class Provider {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,6 +14,7 @@ public class Provider {
 
     @Column(nullable = false)
     private String address;
+
     @Column(nullable = false)
     private String city;
 
@@ -21,18 +22,18 @@ public class Provider {
     private String zip;
     private String phonenum;
     private int rating;
+
     @Column(nullable = false)
     private float longitude;
+
     @Column(nullable = false)
     private float latitude;
 
-    //constructor
-    public Provider(){}
+    public Provider() {}
 
-    //default constructor
-    public Provider(int shop, String shopname, String address, String city, String state,
-                    String zip, String phonenum, int rating, float longi, float lat ){
-        this.shopid = shop;
+    public Provider(int shopid, String shopname, String address, String city, String state,
+                    String zip, String phonenum, int rating, float longitude, float latitude) {
+        this.shopid = shopid;
         this.shopname = shopname;
         this.address = address;
         this.city = city;
@@ -40,38 +41,87 @@ public class Provider {
         this.zip = zip;
         this.phonenum = phonenum;
         this.rating = rating;
-        this.longitude = longi;
-        this.latitude = lat;
+        this.longitude = longitude;
+        this.latitude = latitude;
     }
 
-    //getters and setters
-    public void setShopid(int shop){this.shopid = shop;}
-    public int getShopid(){ return shopid;}
+    public int getShopid() {
+        return shopid;
+    }
 
-    public void setShopname(String name){this.shopname = name;}
-    public String getShopname() {return shopname;}
+    public void setShopid(int shopid) {
+        this.shopid = shopid;
+    }
 
-    public void setaddress(String addy){this.address = addy;}
-    public String getaddy() {return address;}
+    public String getShopname() {
+        return shopname;
+    }
 
-    public void setcity(String city){this.city = city;}
-    public String getcity() {return city;}
+    public void setShopname(String shopname) {
+        this.shopname = shopname;
+    }
 
-    public void setstate(String state){this.state= state;}
-    public String getState() {return state;}
+    public String getAddress() {
+        return address;
+    }
 
-    public void setZip(String zip){this.zip = zip;}
-    public String getZip() {return zip;}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-    public void setPhonenum(String pho){this.phonenum = pho;}
-    public String getPhonenum() {return phonenum;}
+    public String getCity() {
+        return city;
+    }
 
-    public void setRating(int rat){this.rating=rat;}
-    public int getRating(){return rating;}
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-    public void setLongitude(float lo){this.longitude=lo;}
-    public float getLongitude(){return longitude;}
+    public String getState() {
+        return state;
+    }
 
-    public void setLatitude(float lat){this.latitude=lat;}
-    public float getLatitude() {return latitude;}
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    public String getPhonenum() {
+        return phonenum;
+    }
+
+    public void setPhonenum(String phonenum) {
+        this.phonenum = phonenum;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public float getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
+    }
+
+    public float getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
 }

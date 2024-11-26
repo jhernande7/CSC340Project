@@ -1,0 +1,187 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(9, 0, 77, 0.65), rgba(9, 0, 77, 0.65)), url('LogInBg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    position: relative; /* Enable dropdown positioning */
+}
+
+.logo {
+    width: 180px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-right: 60px;
+}
+
+nav li {
+    position: relative; /* Allows dropdown positioning */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f5168d; /* Pink hover effect */
+}
+
+/* Dropdown Menu */
+nav ul li .dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the parent menu item */
+    left: 0;
+    background: #fff; /* White background for the dropdown */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 1000;
+    min-width: 250px; /* Ensure consistent width */
+    padding: 10px 0;
+    text-align: left;
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item a {
+    text-decoration: none;
+    color: #333; /* Dark text for dropdown links */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.dropdown-item:hover {
+    background: #f5168d; /* Pink background on hover */
+    color: #fff;
+}
+
+/* Description Text */
+.dropdown-item p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+    line-height: 1.4;
+    font-weight: normal;
+}
+
+/* Button */
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    background: #f5168d;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Icons Section */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-icons .icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(211, 211, 211, 0.7); /* Light gray with transparency */
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.nav-icons .icon-link:hover {
+    background: rgba(211, 211, 211, 1); /* Slightly darker on hover */
+}
+
+.nav-icons .icon-link img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Content Section */
+.content {
+    margin-top: 14%;
+    color: #fff;
+    max-width: 620px;
+}
+
+.content h1 {
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 85px;
+    margin-bottom: 25px;
+}
+
+.content form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.content form input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.content form .btn {
+    font-size: 15px;
+    padding: 10px 30px;
+}
+
+
+

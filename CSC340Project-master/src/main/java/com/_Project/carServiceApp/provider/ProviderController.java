@@ -1,50 +1,54 @@
 package com._Project.carServiceApp.provider;
 
-
-import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
-
 
 @RestController
 @RequestMapping("/provider")
 public class ProviderController {
+
     @Autowired
     private ProviderServices providerService;
 
-    @GetMapping("/{providerid}")
-    public Optional<Provider> getprovider(@PathVariable int id){
-        return providerService.getProById(id);
+    // Get Provider by ID
+    @GetMapping("/{providerId}")
+    public ResponseEntity<Provider> getProviderById(@PathVariable Integer providerId) {
+        Provider provider = providerService.getProById(providerId);
+        return ResponseEntity.ok(provider);
     }
 
-    //gets all providers
+    // Get all Providers
     @GetMapping("/all")
-    public List<Provider> getAllProviders() {
-        return providerService.getAllProviders();
+    public ResponseEntity<List<Provider>> getAllProviders() {
+        List<Provider> providers = providerService.getAllProviders();
+        return ResponseEntity.ok(providers);
     }
 
-    //for posting a new provider
+    // Add a new Provider
     @PostMapping("/new")
-    public List<Provider> newProvider(@RequestBody Provider provider){
+    public ResponseEntity<List<Provider>> newProvider(@RequestBody Provider provider) {
         providerService.newProvider(provider);
-        return providerService.getAllProviders();
+        List<Provider> providers = providerService.getAllProviders();
+        return ResponseEntity.ok(providers);
     }
 
-    //updating current provider
-    @PutMapping("/update/{providerid}")
-    public List<Provider> updateProvider(@PathVariable int providerId, @RequestBody Provider provider){
+    // Update an existing Provider
+    @PutMapping("/update/{providerId}")
+    public ResponseEntity<List<Provider>> updateProvider(
+            @PathVariable Integer providerId, @RequestBody Provider provider) {
         providerService.updateProvider(providerId, provider);
-        return providerService.getAllProviders();
+        List<Provider> providers = providerService.getAllProviders();
+        return ResponseEntity.ok(providers);
     }
 
-    //for deleting provider
+    // Delete a Provider by ID
     @DeleteMapping("/delete/{providerId}")
-    public List<Provider> deleteByProviderId(@PathVariable int proid){
-        providerService.deleteById(proid);
-        return providerService.getAllProviders();
+    public ResponseEntity<List<Provider>> deleteProviderById(@PathVariable Integer providerId) {
+        providerService.deleteById(providerId);
+        List<Provider> providers = providerService.getAllProviders();
+        return ResponseEntity.ok(providers);
     }
-
-
 }

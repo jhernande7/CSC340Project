@@ -1,0 +1,855 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(9, 0, 77, 0.65), rgba(9, 0, 77, 0.65)), url('mechanicpic.png');
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    position: relative; /* Enable dropdown positioning */
+}
+
+.logo {
+    width: 180px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-right: 60px;
+}
+
+nav li {
+    position: relative; /* Allows dropdown positioning */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f5168d; /* Pink hover effect */
+}
+
+/* Dropdown Menu */
+nav ul li .dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the parent menu item */
+    left: 0;
+    background: #fff; /* White background for the dropdown */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 1000;
+    min-width: 250px; /* Ensure consistent width */
+    padding: 10px 0;
+    text-align: left;
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item a {
+    text-decoration: none;
+    color: #333; /* Dark text for dropdown links */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.dropdown-item:hover {
+    background: #f5168d; /* Pink background on hover */
+    color: #fff;
+}
+
+/* Description Text */
+.dropdown-item p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+    line-height: 1.4;
+    font-weight: normal;
+}
+
+/* Button */
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    background: #f5168d;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Icons Section */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-icons .icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(211, 211, 211, 0.7); /* Light gray with transparency */
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.nav-icons .icon-link:hover {
+    background: rgba(211, 211, 211, 1); /* Slightly darker on hover */
+}
+
+.nav-icons .icon-link img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Content Section */
+.content {
+    margin-top: 14%;
+    color: #fff;
+    max-width: 620px;
+}
+
+.content h1 {
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 85px;
+    margin-bottom: 25px;
+}
+
+.content form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.content form input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.content form .btn {
+    font-size: 15px;
+    padding: 10px 30px;
+}
+
+
+
+
+
+
+<!-- SPACEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE -->
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+.service-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    background-color: #fff;
+    gap: 20px; /* Space between cards */
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.service-card .icon img {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-card .learn-more {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.service-card .learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .service-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+
+
+<!-- New Service listing page                                          -->
+
+.service-list-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-list-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.service-list-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.service-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ccc; /* Adds the border to each column */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    width: 300px; /* Fixed width for each column */
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+     border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 14px;
+        color: #555;
+        text-align: left;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: Arial, sans-serif;
+}
+
+.service-item:hover {
+    background-color: #e0f7fa; /* Light blue background */
+    color: #00796b; /* Text turns teal */
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.service-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-list-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+<!-- css for all service button -->
+
+/* SECTION STYLING FOR BUTTON */
+/* BODY STYLING TO CENTER CONTENT */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Sets the height to the full viewport */
+    background-color: #f9f9f9; /* Optional: Adds a subtle background color */
+}
+
+/* SECTION STYLING (WRAPPING BUTTON) */
+.see-all-services-section {
+    text-align: center;
+    margin-top: 40px; /* Add space before the section */
+    margin-bottom: 75px; /* Add space before the section */
+
+}
+
+/* BUTTON STYLING */
+.fancy-button {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    padding: 12px 40px;
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 50px; /* Fully rounded edges */
+    background-color: #fff; /* White background */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    cursor: pointer; /* Changes to a pointer cursor on hover */
+}
+
+/* BUTTON HOVER EFFECTS */
+.fancy-button:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+    border-color: #888; /* Darker border on hover */
+    color: #000; /* Darker text color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//* Body specifically for repair-shop-section */
+ .repair-shop-body {
+     margin: 0;
+     padding: 0;
+     background-color: #f9f9f9; /* Light gray background */
+     font-family: Arial, sans-serif;
+ }
+
+ /* Repair Shop Section */
+ .repair-shop-section {
+     background-color: #fff;
+     padding: 50px;
+     border-top: 4px solid #ccc; /* Horizontal line to separate the section */
+ }
+
+ .repair-shop-container {
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+     gap: 50px;
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ /* Left Image */
+ .repair-shop-image img {
+     width: 100%;
+     max-width: 400px;
+     border-radius: 8px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ }
+
+ /* Right Content */
+ .repair-shop-content h2 {
+     font-size: 28px;
+     color: #333;
+     margin-bottom: 15px;
+ }
+
+ .repair-shop-content p {
+     font-size: 16px;
+     color: #666;
+     margin-bottom: 30px;
+     line-height: 1.6;
+ }
+
+ .steps {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+ }
+
+ .step {
+     display: flex;
+     align-items: flex-start;
+     gap: 20px;
+ }
+
+ .step-circle {
+     width: 40px;
+     height: 40px;
+     border: 2px solid #ccc;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 18px;
+     font-weight: bold;
+     color: #333;
+ }
+
+ .step-text h3 {
+     font-size: 18px;
+     color: #333;
+     margin-bottom: 5px;
+ }
+
+ .step-text p {
+     font-size: 14px;
+     color: #666;
+     margin: 0;
+     line-height: 1.5;
+ }
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+     .repair-shop-container {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .repair-shop-image img {
+         max-width: 100%;
+     }
+
+     .repair-shop-content {
+         text-align: center;
+     }
+
+     .steps {
+         align-items: center;
+     }
+
+     .step {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .step-circle {
+         margin-bottom: 10px;
+     }
+ }
+
+
+
+
+
+
+<!--  Cars and brands  -->
+/* Section Divider */
+
+.section-divider {
+    border: none;
+    border-top: 4px solid #ccc;
+         padding: 50px;
+    margin: 0 0 20px; /* Consistent with other sections */
+}
+
+/* Car Brands Section */
+.car-brands-section {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.car-brands-section h2 {
+margin-top: 30px;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.car-brands-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Slightly larger gap for better spacing */
+    padding: 0 50px; /* More padding on left and right for extra space */
+}
+
+/* Car Brand */
+.car-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Reduced space between logo and button */
+    width: calc(16.66% - 30px); /* Slightly reduced size to allow more spacing */
+}
+
+.car-brand img {
+    width: 70px; /* Smaller size for logos */
+    height: auto;
+}
+
+/* Brand Button Styling */
+.brand-button {
+    background-color: transparent;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 4px 12px; /* Reduced padding for smaller buttons */
+    font-size: 12px; /* Smaller font size */
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.brand-button:hover {
+    background-color: #00acc1; /* Blue background on hover */
+    color: #fff; /* White text on hover */
+    border-color: #00acc1; /* Blue border on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .car-brand {
+        width: calc(33.33% - 20px); /* 3 items per row on smaller screens */
+    }
+
+    .car-brand img {
+        width: 60px; /* Smaller logo size */
+    }
+
+    .brand-button {
+        font-size: 10px; /* Reduced font size for smaller screens */
+        padding: 3px 8px; /* Smaller padding for smaller buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .car-brand {
+        width: calc(50% - 20px); /* 2 items per row on very small screens */
+    }
+
+    .car-brand img {
+        width: 50px; /* Smaller logo size */
+    }
+
+    .brand-button {
+        font-size: 9px; /* Further reduced font size */
+        padding: 2px 6px; /* Smaller padding for very small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Map showing cities section -->
+/* Section Divider */
+.section-divider {
+    border: none;
+    border-top: 4px solid #ccc;
+    margin: 0 0 20px;
+}
+
+/* City Availability Section */
+.city-availability-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Light gray background */
+    text-align: center;
+}
+
+.city-availability-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.map-container {
+    margin-bottom: 30px;
+}
+
+.map-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.city-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.city-link {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.city-link:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .city-link {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* GET AN ESTIMATE - sticky button */
+/* Sticky Button Styling */
+/* Sticky Button Styling */
+.sticky-button {
+    position: fixed; /* Stays fixed at the bottom of the page */
+    bottom: 20px; /* Distance from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to the center */
+    background-color: #f5168d; /* Pink! */
+    color: #fff; /* White text */
+    font-size: 20px; /* Larger font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 50px; /* Wider and taller button */
+    border-radius: 50px; /* Rounded edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect */
+.sticky-button:hover {
+    background-color: #0056b3;/* Darker blue on hover */
+    transform: translateX(-50%) scale(1.05); /* Slight zoom effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Last section */
+
+
+/* Footer Section */
+.footer-section {
+    background-color: #00acc1; /* Pink background color */
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    color: #fff; /* White text color */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Centralized container width */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff; /* White headings */
+}
+
+.footer-link {
+    display: block;
+    font-size: 14px;
+    color: #ffe6f1; /* Light pink for links */
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #fff; /* Pure white on hover */
+}
+
+.footer-license {
+    font-size: 12px;
+    color: #ffbcd2; /* Light pink for license info */
+    margin-top: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

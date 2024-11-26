@@ -4,36 +4,45 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProviderServices {
+
     @Autowired
-    //provider repository object used to call back for custom requests and also used for regular requests.
     private ProviderRepository prorep;
 
-    //getting provider by their id
-    public Optional<Provider> getProById(Integer proid){
-        return prorep.findById(proid);
+    // Get Provider by ID
+    public Provider getProById(Integer providerId) {
+        return prorep.findById(providerId)
+                .orElseThrow(() -> new RuntimeException("Provider with ID " + providerId + " not found."));
     }
 
-    //getting all providers
+    // Get all Providers
     public List<Provider> getAllProviders() {
         return prorep.findAll();
     }
 
-    //adding a new provider
-    public void newProvider(Provider pro){
-        prorep.save(pro);
+    // Add a new Provider
+    public void newProvider(Provider provider) {
+        prorep.save(provider);
     }
 
-    //updating provider
-    public void updateProvider(Integer providerid, Provider pro){
-        prorep.save(pro);
+    // Update Provider
+    public void updateProvider(Integer providerId, Provider provider) {
+        if (prorep.existsById(providerId)) {
+            provider.setShopid(providerId); // Ensure the correct ID is set
+            prorep.save(provider);
+        } else {
+            throw new RuntimeException("Provider with ID " + providerId + " does not exist.");
+        }
     }
 
-    //deleting by id
-    public void deleteById(int Proid){
-        prorep.deleteById(Proid);
+    // Delete Provider by ID
+    public void deleteById(Integer providerId) {
+        if (prorep.existsById(providerId)) {
+            prorep.deleteById(providerId);
+        } else {
+            throw new RuntimeException("Provider with ID " + providerId + " does not exist.");
+        }
     }
 }
