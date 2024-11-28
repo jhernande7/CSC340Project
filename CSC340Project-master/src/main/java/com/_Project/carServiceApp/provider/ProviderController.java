@@ -1,10 +1,10 @@
 package com._Project.carServiceApp.provider;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/provider")
@@ -14,41 +14,35 @@ public class ProviderController {
     private ProviderServices providerService;
 
     // Get Provider by ID
-    @GetMapping("/{providerId}")
-    public ResponseEntity<Provider> getProviderById(@PathVariable Integer providerId) {
-        Provider provider = providerService.getProById(providerId);
-        return ResponseEntity.ok(provider);
+    @GetMapping("/profile/{providerId}")
+    public Optional<Provider> getProviderProfileById(@PathVariable("providerId") int id) {
+        return providerService.getProById(id);
     }
 
     // Get all Providers
     @GetMapping("/all")
-    public ResponseEntity<List<Provider>> getAllProviders() {
-        List<Provider> providers = providerService.getAllProviders();
-        return ResponseEntity.ok(providers);
+    public List<Provider> getAllProviders() {
+        return providerService.getAllProviders();
     }
 
     // Add a new Provider
     @PostMapping("/new")
-    public ResponseEntity<List<Provider>> newProvider(@RequestBody Provider provider) {
+    public List<Provider> newProvider(@RequestBody Provider provider) {
         providerService.newProvider(provider);
-        List<Provider> providers = providerService.getAllProviders();
-        return ResponseEntity.ok(providers);
+        return providerService.getAllProviders();
     }
 
     // Update an existing Provider
     @PutMapping("/update/{providerId}")
-    public ResponseEntity<List<Provider>> updateProvider(
-            @PathVariable Integer providerId, @RequestBody Provider provider) {
+    public List<Provider> updateProvider(@PathVariable("providerId") int providerId, @RequestBody Provider provider) {
         providerService.updateProvider(providerId, provider);
-        List<Provider> providers = providerService.getAllProviders();
-        return ResponseEntity.ok(providers);
+        return providerService.getAllProviders();
     }
 
     // Delete a Provider by ID
     @DeleteMapping("/delete/{providerId}")
-    public ResponseEntity<List<Provider>> deleteProviderById(@PathVariable Integer providerId) {
+    public List<Provider> deleteByProviderId(@PathVariable("providerId") int providerId) {
         providerService.deleteById(providerId);
-        List<Provider> providers = providerService.getAllProviders();
-        return ResponseEntity.ok(providers);
+        return providerService.getAllProviders();
     }
 }

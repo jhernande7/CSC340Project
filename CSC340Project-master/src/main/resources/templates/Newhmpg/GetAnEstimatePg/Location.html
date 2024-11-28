@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<header class="main-header">
+    <nav class="main-nav">
+        <ul>
+            <li><a href="Vehicle.html">Vehicle</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Location.html">Location</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Payment.html">Payment</a></li>
+            <li><a href="Book.html">Book</a></li>
+        </ul>
+    </nav>
+
+    <style> .main-header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.main-nav ul li a:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+}
+    </style>
+</header>
+<div class="container">
+    <include src="Header.html"></include>
+    <main class="form-container">
+        <h1>Enter Your Location</h1>
+        <form id="location-form">
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Enter your address" required>
+            <label for="city">City:</label>
+            <input type="text" id="city" placeholder="Enter your city" required>
+            <label for="state">State:</label>
+            <input type="text" id="state" placeholder="Enter your state" required>
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" placeholder="Enter your zip code" required>
+            <button type="button" onclick="goToSchedule()">Next</button>
+        </form>
+    </main>
+</div>
+
+<script>
+    function goToSchedule() {
+        const locationData = {
+            address: document.getElementById('address').value,
+            city: document.getElementById('city').value,
+            state: document.getElementById('state').value,
+            zip: document.getElementById('zip').value
+        };
+        sessionStorage.setItem('locationData', JSON.stringify(locationData));
+        window.location.href = 'Schedule.html';
+    }
+</script>
+</body>
+</html>

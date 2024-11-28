@@ -191,8 +191,8 @@ this.innerHTML = `
   </style>
   <div class="container">
     <nav>
-      <a href="../samplelogin.html">
-        <img src="../logo23.png" class="logo" alt="Logo">
+      <a href="../Newhmpg/samplelogin.html">
+        <img src="../Newhmpg/logo23.png" class="logo" alt="Logo">
       </a>
       <ul>
         <!-- How it Works -->
@@ -243,7 +243,7 @@ this.innerHTML = `
               <p>Emergency towing and roadside support services</p>
             </div>
             <div class="dropdown-item">
-              <a href="#">Explore 100+ Services</a>
+              <a href="NewhmPg/Services.html">Explore 100+ Services</a>
               <p>Discover all the services we provide for your car</p>
             </div>
           </div>
@@ -304,14 +304,16 @@ this.innerHTML = `
         </li>
       </ul>
       <div class="nav-icons">
+      <a href= "LoginPgWork/SignUp.html" class="btn-link">
         <button class="btn">
-          <img src="../icon.png" alt="Mechanic Icon"> Become A Mechanic
+          <img src="icon.png" alt="Mechanic Icon"> Become A Mechanic
         </button>
+      </a>
         <a href="#" class="icon-link">
-          <img src="../search.png" alt="Search Icon">
+          <img src="../Newhmpg/search.png" alt="Search Icon">
         </a>
         <a href="#" class="icon-link">
-          <img src="../user.png" alt="User Icon">
+          <img src="../Newhmpg/user.png" alt="User Icon">
         </a>
       </div>
     </nav>

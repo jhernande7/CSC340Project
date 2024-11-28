@@ -29,8 +29,7 @@ public class Provider {
     @Column(nullable = false)
     private float latitude;
 
-    public Provider() {}
-
+    //constructor
     public Provider(int shopid, String shopname, String address, String city, String state,
                     String zip, String phonenum, int rating, float longitude, float latitude) {
         this.shopid = shopid;
@@ -45,9 +44,7 @@ public class Provider {
         this.latitude = latitude;
     }
 
-    public int getShopid() {
-        return shopid;
-    }
+    public int getShopid() { return shopid; }
 
     public void setShopid(int shopid) {
         this.shopid = shopid;

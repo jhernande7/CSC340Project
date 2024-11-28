@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Details</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+<!--
+    <include src="Header.html"></include>
+-->
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="Vehicle.html">Vehicle</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Location.html">Location</a></li>
+                <li><a href="Schedule.html">Schedule</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Payment.html">Payment</a></li>
+                <li><a href="Book.html">Book</a></li>
+            </ul>
+        </nav>
+
+        <style> .main-header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.main-nav ul li a:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+}
+        </style>
+    </header>
+
+    <main class="form-container">
+        <h1>Enter Your Vehicle Details</h1>
+        <form id="vehicle-form">
+            <label for="vehicle-year">Year:</label>
+            <select id="vehicle-year" required>
+                <option value="">Select Year</option>
+            </select>
+
+            <label for="vehicle-make">Make:</label>
+            <select id="vehicle-make" required>
+                <option value="">Select Make</option>
+            </select>
+
+            <label for="vehicle-model">Model:</label>
+            <select id="vehicle-model" required>
+                <option value="">Select Model</option>
+            </select>
+
+            <button type="button" id="next-button" onclick="goToServices()">Next</button>
+        </form>
+    </main>
+</div>
+
+<script>
+    async function populateMakes() {
+        const makeSelect = document.getElementById('vehicle-make');
+        const response = await fetch('https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json');
+        const data = await response.json();
+
+        if (data.Results) {
+            data.Results.forEach(make => {
+                const option = document.createElement('option');
+                option.value = make.MakeName;
+                option.textContent = make.MakeName;
+                makeSelect.appendChild(option);
+            });
+        }
+    }
+
+    function populateYears() {
+        const yearSelect = document.getElementById('vehicle-year');
+        const currentYear = new Date().getFullYear();
+        for (let year = currentYear; year >= 1980; year--) {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            yearSelect.appendChild(option);
+        }
+    }
+
+    async function fetchModels() {
+        const make = document.getElementById('vehicle-make').value;
+        const year = document.getElementById('vehicle-year').value;
+        const modelSelect = document.getElementById('vehicle-model');
+        modelSelect.innerHTML = '<option value="">Select Model</option>';
+
+        if (make && year) {
+            const response = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeYear/make/${make}/modelyear/${year}?format=json`);
+            const data = await response.json();
+            if (data.Results) {
+                data.Results.forEach(model => {
+                    const option = document.createElement('option');
+                    option.value = model.Model_Name;
+                    option.textContent = model.Model_Name;
+                    modelSelect.appendChild(option);
+                });
+            }
+        }
+    }
+
+    document.getElementById('vehicle-make').addEventListener('change', fetchModels);
+    document.getElementById('vehicle-year').addEventListener('change', fetchModels);
+    window.onload = function () {
+        populateYears();
+        populateMakes();
+    };
+
+    function goToServices() {
+        sessionStorage.setItem('vehicleData', JSON.stringify({
+            year: document.getElementById('vehicle-year').value,
+            make: document.getElementById('vehicle-make').value,
+            model: document.getElementById('vehicle-model').value
+        }));
+        window.location.href = 'Services.html';
+    }
+</script>
+</body>
+</html>

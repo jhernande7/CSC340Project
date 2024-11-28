@@ -1,9 +1,11 @@
 package com._Project.carServiceApp.provider;
 
+import com._Project.carServiceApp.customer.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProviderServices {
@@ -12,37 +14,29 @@ public class ProviderServices {
     private ProviderRepository prorep;
 
     // Get Provider by ID
-    public Provider getProById(Integer providerId) {
-        return prorep.findById(providerId)
-                .orElseThrow(() -> new RuntimeException("Provider with ID " + providerId + " not found."));
+
+    public Optional<Provider> getProById(Integer providerid){
+        return prorep.findById(providerid);
     }
 
-    // Get all Providers
+
     public List<Provider> getAllProviders() {
         return prorep.findAll();
     }
 
-    // Add a new Provider
-    public void newProvider(Provider provider) {
+
+
+    public void newProvider(Provider provider){
         prorep.save(provider);
     }
 
-    // Update Provider
-    public void updateProvider(Integer providerId, Provider provider) {
-        if (prorep.existsById(providerId)) {
-            provider.setShopid(providerId); // Ensure the correct ID is set
-            prorep.save(provider);
-        } else {
-            throw new RuntimeException("Provider with ID " + providerId + " does not exist.");
-        }
+    //updating a current customer profile
+    public void updateProvider(Integer providerid, Provider provider){
+        prorep.save(provider);
     }
 
-    // Delete Provider by ID
-    public void deleteById(Integer providerId) {
-        if (prorep.existsById(providerId)) {
-            prorep.deleteById(providerId);
-        } else {
-            throw new RuntimeException("Provider with ID " + providerId + " does not exist.");
-        }
+    public void deleteById(int providerid){
+        prorep.deleteById(providerid);
     }
+
 }
