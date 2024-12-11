@@ -28,7 +28,12 @@ public class CustomerServices {
     }
 
     //updating a current customer profile
-    public void updateCustomer(Integer customerid, Customer customer){
+    public void updateCustomer(Integer customerid, Customer customer) {
+        cusrep.save(customer);
+    }
+
+    //saving customer
+    public void saveCustomer(Customer customer){
         cusrep.save(customer);
     }
 

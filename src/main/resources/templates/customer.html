@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Dashboard</title>
-    <link rel="stylesheet" href="css/customer.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/customer.css">
 </head>
 <body>
 <div class="header">
-    <img src="images/logo.png" alt="logo" class="logo">
-    <h1>Welcome, [Customer Name]</h1>
+    <img src="../static/css/images/logo.png" alt="logo" class="logo">
+    <h1 data-th-text="${customer.name}"></h1>
     <nav>
         <a href="home.html">Home</a>
     </nav>
@@ -19,8 +19,9 @@
         <h2>Your Reviews</h2>
         <ul id="reviews">
             <!-- Example reviews -->
-            <li>"Great service at ABC Auto!" - 5⭐</li>
-            <li>"Quick and reliable." - 4⭐</li>
+            <!--<li>"Great service at ABC Auto!" - 5⭐</li>
+            <li>"Quick and reliable." - 4⭐</li>-->
+            <p data-th-text=" 'Reviews: ' + ${customer.reviews}"></p>
         </ul>
     </div>
     <div class="shop-section">
@@ -38,6 +39,11 @@
                 <p>Services: Repairs, Oil Change</p>
             </div>
         </div>
+    </div>
+    <div class="otherStuff">
+        <p data-th-text=" 'Your password: ' + ${customer.password}"></p>
+        <p data-th-text=" 'Your email: ' + ${customer.email}"></p>
+        <p data-th-text=" 'Your customer Id: ' + ${customer.id}"></p>
     </div>
 </div>
 </body>
