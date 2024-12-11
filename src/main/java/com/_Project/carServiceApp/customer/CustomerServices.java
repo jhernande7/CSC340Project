@@ -32,6 +32,11 @@ public class CustomerServices {
         cusrep.save(customer);
     }
 
+    //saving a customer
+    public void saveCustomer(Customer customer){
+        cusrep.save(customer);
+    }
+
     public void deletebyId(int customerid){
         cusrep.deleteById(customerid);
     }

@@ -1,6 +1,5 @@
 package com._Project.carServiceApp.provider;
 
-import com._Project.carServiceApp.customer.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +18,9 @@ public class ProviderServices {
         return prorep.findById(providerid);
     }
 
-
     public List<Provider> getAllProviders() {
         return prorep.findAll();
     }
-
-
 
     public void newProvider(Provider provider){
         prorep.save(provider);
@@ -37,6 +33,10 @@ public class ProviderServices {
 
     public void deleteById(int providerid){
         prorep.deleteById(providerid);
+    }
+
+    public void saveProvider(Provider provider){
+        prorep.save(provider);
     }
 
 }

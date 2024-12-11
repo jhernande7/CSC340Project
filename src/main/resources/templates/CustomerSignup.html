@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <!--
+        <link rel="stylesheet" href="SignUp.css"> &lt;!&ndash; Link to your CSS file &ndash;&gt;
+    -->
+    <script type="module" src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Custom Header -->
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #00d9ff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #00d9ff;
+        }
+
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            position: relative;
+            background: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns%3d%27http%3a//www.w3.org/2000/svg%27 width%3d%2712%27 height%3d%2712%27 viewBox%3d%270 0 20 20%27 fill%3d%27%23fff%27%3e%3cpath d%3d%27M7 10l5 5 5-5z%27/%3e%3c/svg%3e') no-repeat right 10px center;
+            background-size: 12px;
+        }
+
+        .form-group select option {
+            color: #000;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn-container button {
+            background: #00d9ff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-container button:hover {
+            background: #00a3cc;
+        }
+    </style>
+
+    <!--
+        <my-header></my-header>
+    -->
+
+</head>
+
+<body>
+<div class="form-container">
+    <h2>Sign Up</h2>
+    <form id="customerSignupForm" action="/customer/new" method="post">
+
+        <!-- Name Field -->
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" data-th-value="${customer.name}">
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email" data-th-value="${customer.email}">
+        </div>
+
+        <!-- Zip Code Field -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" placeholder="Enter your password" data-th-value="${customer.password}">
+        </div>
+
+        <!-- review field -->
+        <div class="form-group">
+            <label for="review">Review</label>
+            <input type="text" id="review" name="Review" placeholder="for reviews" data-th-value="${customer.reviews}" readonly/>
+        </div>
+
+        <!-- Id filed -->
+        <div class="form-group">
+            <label for="id">Customer Id: </label>
+            <input type="number" id="id" name="id" placeholder="placeholder for id" data-th-value="${customer.id}" readonly/>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="btn-container">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</div>
+</body>
+
+
+</html>

@@ -1,12 +1,16 @@
 package com._Project.carServiceApp.provider;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 @RequestMapping("/provider")
 public class ProviderController {
 
@@ -15,34 +19,45 @@ public class ProviderController {
 
     // Get Provider by ID
     @GetMapping("/profile/{providerId}")
-    public Optional<Provider> getProviderProfileById(@PathVariable("providerId") int id) {
-        return providerService.getProById(id);
+    public String getProviderById(@PathVariable int providerid, Model model){
+        Provider provider = providerService.getProById(providerid).orElseThrow(() -> new RuntimeException("Provider not found"));
+        model.addAttribute("provider", provider);
+        model.addAttribute("title", providerid);
+        return "provider";
     }
 
-    // Get all Providers
-    @GetMapping("/all")
-    public List<Provider> getAllProviders() {
-        return providerService.getAllProviders();
-    }
 
     // Add a new Provider
+    @GetMapping("/new")
+    public String createNewProvider(Model model){
+        model.addAttribute("provider", new Provider());
+        return "customer-signup";
+    }
+
     @PostMapping("/new")
-    public List<Provider> newProvider(@RequestBody Provider provider) {
+    public String newProvider(Provider provider){
         providerService.newProvider(provider);
-        return providerService.getAllProviders();
+        return "redirect://customer";
     }
 
     // Update an existing Provider
-    @PutMapping("/update/{providerId}")
-    public List<Provider> updateProvider(@PathVariable("providerId") int providerId, @RequestBody Provider provider) {
-        providerService.updateProvider(providerId, provider);
-        return providerService.getAllProviders();
+    @GetMapping("/update/{providerId}")
+    public String showUpdateForm(@PathVariable int providerid, Model model){
+        Provider provider = providerService.getProById(providerid).orElseThrow(() -> new RuntimeException("Provider not found"));
+        model.addAttribute("provider", provider);
+        return "customer-signup";
+    }
+
+    @PostMapping("/update")
+    public String updateProvider(Provider provider){
+        providerService.saveProvider(provider);
+        return "redirect:/provider/profile/" + provider.getShopid();
     }
 
     // Delete a Provider by ID
-    @DeleteMapping("/delete/{providerId}")
-    public List<Provider> deleteByProviderId(@PathVariable("providerId") int providerId) {
-        providerService.deleteById(providerId);
-        return providerService.getAllProviders();
+    @GetMapping("/delete/{providerId}")
+    public String deleteByProviderId(@PathVariable int providerid){
+        providerService.deleteById(providerid);
+        return "redirect:/provider";
     }
 }

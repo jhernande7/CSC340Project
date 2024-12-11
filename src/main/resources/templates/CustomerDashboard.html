@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/CustomerDashboard.css}">
+</head>
+<body>
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img th:src="@{/images/logo23.png}" alt="my logo" class="logo-img">
+        </div>
+        <ul class="menu">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">My Favorites</a></li>
+            <li><a href="#">Resources</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <h1>Welcome Back! <p data-th-text="${customer.name}"></p></h1>
+            <div class="top-actions">
+                <div class="profile-section">
+                    <img th:src="@{/images/user-icon.png}" alt="Profile" class="profile-icon">
+                </div>
+                <button class="post-project-btn">My Profile</button>
+                <button class="find-jobs-btn">Sell Services</button>
+
+
+            </div>
+        </header>
+
+        <!-- Cards -->
+        <div class="stats-cards">
+            <div class="card">
+                <h3>Ongoing Services</h3>
+                <p>Total: <strong>0</strong></p>
+                <p>Deadline: 7 days</p>
+            </div>
+        </div>
+
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <img th:src="@{/images/coffeemechanic.png}" alt="Welcome" class="welcome-image">
+            <h2>Welcome to Car Service Finder</h2>
+            <p>Start your journey on CSF by making your profile on <a href="#">My Profile Section</a></p>
+        </div>
+    </main>
+</div>
+</body>
+</html>
