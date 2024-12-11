@@ -1,5 +1,6 @@
 package com._Project.carServiceApp.provider;
 
+import com._Project.carServiceApp.customer.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,32 +9,34 @@ import java.util.Optional;
 
 @Service
 public class ProviderServices {
+
     @Autowired
-    //provider repository object used to call back for custom requests and also used for regular requests.
     private ProviderRepository prorep;
 
-    //getting provider by their id
-    public Optional<Provider> getProById(Integer proid){
-        return prorep.findById(proid);
+    // Get Provider by ID
+
+    public Optional<Provider> getProById(Integer providerid){
+        return prorep.findById(providerid);
     }
 
-    //getting all providers
+
     public List<Provider> getAllProviders() {
         return prorep.findAll();
     }
 
-    //adding a new provider
-    public void newProvider(Provider pro){
-        prorep.save(pro);
+
+
+    public void newProvider(Provider provider){
+        prorep.save(provider);
     }
 
-    //updating provider
-    public void updateProvider(Integer providerid, Provider pro){
-        prorep.save(pro);
+    //updating a current customer profile
+    public void updateProvider(Integer providerid, Provider provider){
+        prorep.save(provider);
     }
 
-    //deleting by id
-    public void deleteById(int Proid){
-        prorep.deleteById(Proid);
+    public void deleteById(int providerid){
+        prorep.deleteById(providerid);
     }
+
 }

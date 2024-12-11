@@ -1,0 +1,43 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+}
+
+/* Body Styles */
+body {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Container Styles */
+.container {
+    text-align: center; /* Center text inside the container */
+    padding: 20px; /* Padding inside the container */
+    background-color: white; /* White background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Image Styles */
+.construction-image {
+    width: 250px; /* Set width for the image */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+/* Heading Styles */
+h1 {
+    color: #007BFF; /* Blue color for headings */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+/* Paragraph Styles */
+p {
+    color: #333; /* Dark text color for paragraph */
+    font-size: 1.2em; /* Slightly larger text */
+}

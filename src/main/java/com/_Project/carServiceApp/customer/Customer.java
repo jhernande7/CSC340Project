@@ -14,16 +14,11 @@ public class Customer {
 
     private String email;
 
-    private int reviews;
-    private String password;
-
     // Constructor
-    public Customer(int id, String name, String email, int rev, String passwrd) {
+    public Customer(int id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.reviews = rev;
-        this.password = passwrd;
     }
 
     public Customer(){}
@@ -36,6 +31,8 @@ public class Customer {
     public void setId(int id) {
         this.id = id;
     }
+
+
 
     public String getName() {
         return name;
@@ -51,20 +48,5 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getReviews() {
-        return reviews;
-    }
-    public void setReviews(int rev) {
-        this.reviews = rev;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String pss) {
-        this.password= pss;
     }
 }

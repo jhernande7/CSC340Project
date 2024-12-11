@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Services</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<header class="main-header">
+    <nav class="main-nav">
+        <ul>
+            <li><a href="Vehicle.html">Vehicle</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Location.html">Location</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Payment.html">Payment</a></li>
+            <li><a href="Book.html">Book</a></li>
+        </ul>
+    </nav>
+
+    <style> .main-header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.main-nav ul li a:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+}
+    </style>
+</header>
+<div class="container">
+    <include src="Header.html"></include>
+    <main class="form-container">
+        <h1>Select a Service</h1>
+        <input type="text" id="search-services" placeholder="Search for a service...">
+        <ul id="services-list">
+            <li data-service="Oil Change">Oil Change</li>
+            <li data-service="Brake Pad Replacement">Brake Pad Replacement</li>
+            <li data-service="Battery Replacement">Battery Replacement</li>
+            <!-- Add more services here -->
+        </ul>
+        <button type="button" id="next-button" onclick="goToLocation()">Next</button>
+    </main>
+</div>
+
+<script>
+    document.getElementById('services-list').addEventListener('click', function (event) {
+        if (event.target.tagName === 'LI') {
+            document.querySelectorAll('#services-list li').forEach(li => li.classList.remove('selected'));
+            event.target.classList.add('selected');
+            sessionStorage.setItem('selectedService', event.target.getAttribute('data-service'));
+        }
+    });
+
+    function goToLocation() {
+        if (!sessionStorage.getItem('selectedService')) {
+            alert('Please select a service.');
+            return;
+        }
+        window.location.href = 'Location.html';
+    }
+</script>
+</body>
+</html>

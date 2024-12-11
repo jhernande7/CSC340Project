@@ -1,50 +1,48 @@
 package com._Project.carServiceApp.provider;
 
-
-import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-
 @RestController
 @RequestMapping("/provider")
 public class ProviderController {
+
     @Autowired
     private ProviderServices providerService;
 
-    @GetMapping("/{providerid}")
-    public Optional<Provider> getprovider(@PathVariable int id){
+    // Get Provider by ID
+    @GetMapping("/profile/{providerId}")
+    public Optional<Provider> getProviderProfileById(@PathVariable("providerId") int id) {
         return providerService.getProById(id);
     }
 
-    //gets all providers
+    // Get all Providers
     @GetMapping("/all")
     public List<Provider> getAllProviders() {
         return providerService.getAllProviders();
     }
 
-    //for posting a new provider
+    // Add a new Provider
     @PostMapping("/new")
-    public List<Provider> newProvider(@RequestBody Provider provider){
+    public List<Provider> newProvider(@RequestBody Provider provider) {
         providerService.newProvider(provider);
         return providerService.getAllProviders();
     }
 
-    //updating current provider
-    @PutMapping("/update/{providerid}")
-    public List<Provider> updateProvider(@PathVariable int providerId, @RequestBody Provider provider){
+    // Update an existing Provider
+    @PutMapping("/update/{providerId}")
+    public List<Provider> updateProvider(@PathVariable("providerId") int providerId, @RequestBody Provider provider) {
         providerService.updateProvider(providerId, provider);
         return providerService.getAllProviders();
     }
 
-    //for deleting provider
+    // Delete a Provider by ID
     @DeleteMapping("/delete/{providerId}")
-    public List<Provider> deleteByProviderId(@PathVariable int proid){
-        providerService.deleteById(proid);
+    public List<Provider> deleteByProviderId(@PathVariable("providerId") int providerId) {
+        providerService.deleteById(providerId);
         return providerService.getAllProviders();
     }
-
-
 }

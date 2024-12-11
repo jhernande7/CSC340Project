@@ -7,3 +7,4 @@ import org.springframework.stereotype.Repository;
 public interface ProviderRepository extends JpaRepository<Provider,Integer> {
     //custom get mapping requests here.
 }
+
