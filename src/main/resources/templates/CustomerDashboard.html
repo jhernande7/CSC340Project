@@ -29,7 +29,7 @@
                 <div class="profile-section">
                     <img th:src="@{/images/user-icon.png}" alt="Profile" class="profile-icon">
                 </div>
-                <button class="post-project-btn">My Profile</button>
+                <a th:href="@{/customer/update/{customerid}(customerid=${customer.id})}"> <button class="post-project-btn">Update Profile</button></a>
                 <button class="find-jobs-btn">Sell Services</button>
 
 
