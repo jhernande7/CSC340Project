@@ -112,7 +112,7 @@
 <body>
 <div class="form-container">
   <h2>Sign Up</h2>
-  <form id="customerSignupForm" action="/provider/new" method="post">
+  <form id="providerSignupForm" action="/provider/new" method="post">
 
     <!-- Name Field -->
     <div class="form-group">
@@ -128,26 +128,26 @@
 
     <!-- phone number Field -->
     <div class="form-group">
-      <label for="phone">Email</label>
-      <input type="text" id="phone" name="phone" placeholder="Enter your phone number" data-th-value="${customer.email}">
+      <label for="phone">Phone number</label>
+      <input type="text" id="phone" name="phone" placeholder="Enter your phone number" data-th-value="${provider.phonenum}">
     </div>
 
     <!-- password Code Field -->
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="text" id="password" name="password" placeholder="Enter your password" data-th-value="${customer.password}">
+      <input type="text" id="password" name="password" placeholder="Enter your password" data-th-value="${provider.password}">
     </div>
 
     <!-- review field -->
     <div class="form-group">
       <label for="review">Review</label>
-      <input type="text" id="review" name="Review" placeholder="for reviews" data-th-value="${customer.reviews}" readonly/>
+      <input type="text" id="review" name="Review" placeholder="for reviews" data-th-value="${provider.reviews}" readonly/>
     </div>
 
     <!-- Id filed -->
     <div class="form-group">
-      <label for="id">Customer Id: </label>
-      <input type="number" id="id" name="id" placeholder="placeholder for id" data-th-value="${customer.id}" readonly/>
+      <label for="id">Provider Id: </label>
+      <input type="number" id="id" name="id" placeholder="placeholder for id" data-th-value="${provider.shopid}" readonly/>
     </div>
 
     <!-- Submit Button -->

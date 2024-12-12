@@ -68,5 +68,11 @@ public class CustomerController {
         return "redirect:/samplelogin";
     }
 
+    //getting to home page
+    @GetMapping("/home")
+    public String goHome(){
+
+    }
+
 
 }

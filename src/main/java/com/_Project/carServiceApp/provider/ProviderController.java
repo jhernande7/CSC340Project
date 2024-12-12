@@ -18,12 +18,12 @@ public class ProviderController {
     private ProviderServices providerService;
 
     // Get Provider by ID
-    @GetMapping("/profile/{providerId}")
-    public String getProviderById(@PathVariable int providerid, Model model){
-        Provider provider = providerService.getProById(providerid).orElseThrow(() -> new RuntimeException("Provider not found"));
+    @GetMapping("/profile/{shopid}")
+    public String getProviderById(@PathVariable int shopid, Model model){
+        Provider provider = providerService.getProById(shopid).orElseThrow(() -> new RuntimeException("Provider not found"));
         model.addAttribute("provider", provider);
-        model.addAttribute("title", providerid);
-        return "provider";
+        model.addAttribute("title", shopid);
+        return "ProviderDashboard";
     }
 
 
@@ -31,21 +31,21 @@ public class ProviderController {
     @GetMapping("/new")
     public String createNewProvider(Model model){
         model.addAttribute("provider", new Provider());
-        return "customer-signup";
+        return "ProviderSignup";
     }
 
     @PostMapping("/new")
     public String newProvider(Provider provider){
         providerService.newProvider(provider);
-        return "redirect://customer";
+        return "redirect:/provider/profile/" + provider.getShopid();
     }
 
     // Update an existing Provider
-    @GetMapping("/update/{providerId}")
-    public String showUpdateForm(@PathVariable int providerid, Model model){
-        Provider provider = providerService.getProById(providerid).orElseThrow(() -> new RuntimeException("Provider not found"));
+    @GetMapping("/update/{shopid}")
+    public String showUpdateForm(@PathVariable int shopid, Model model){
+        Provider provider = providerService.getProById(shopid).orElseThrow(() -> new RuntimeException("Provider not found"));
         model.addAttribute("provider", provider);
-        return "customer-signup";
+        return "ProviderSignup";
     }
 
     @PostMapping("/update")
@@ -55,9 +55,9 @@ public class ProviderController {
     }
 
     // Delete a Provider by ID
-    @GetMapping("/delete/{providerId}")
-    public String deleteByProviderId(@PathVariable int providerid){
-        providerService.deleteById(providerid);
-        return "redirect:/provider";
+    @GetMapping("/delete/{shopid}")
+    public String deleteByProviderId(@PathVariable int shopid){
+        providerService.deleteById(shopid);
+        return "redirect:/samplelogin";
     }
 }
