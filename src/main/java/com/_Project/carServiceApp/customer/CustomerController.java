@@ -71,7 +71,7 @@ public class CustomerController {
     //getting to home page
     @GetMapping("/home")
     public String goHome(){
-
+        return "samplelogin";
     }
 
 
