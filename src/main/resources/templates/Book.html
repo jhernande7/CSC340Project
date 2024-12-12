@@ -1,12 +1,133 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymleaf.org">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booking Confirmation</title>
-  <link rel="stylesheet" th:href="@{/css/main.css}">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<div class="container">
+  <include src="Header.html"></include>
+  <main class="form-container">
+    <h1>Booking Confirmation</h1>
+    <div id="summary"></div>
+    <button type="button" onclick="startOver()">Start Over</button>
+  </main>
+</div>
+<style>
+  /* Global Reset */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  /* New Header Styles */
+  nav {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.5); /* Dark gray with 50% transparency */
+      backdrop-filter: blur(10px); /* Adds a slight blur effect */
+      z-index: 1000; /* Ensures it appears above other elements */
+  }
+
+  .logo {
+      height: 50px;
+      cursor: pointer;
+  }
+
+  .nav-icons {
+      display: flex;
+      align-items: center;
+  }
+
+  .nav-icons .icon-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(211, 211, 211, 0.7); /* Light gray with transparency */
+      cursor: pointer;
+      transition: background 0.3s ease;
+  }
+
+  .nav-icons .icon-link:hover {
+      background: rgba(211, 211, 211, 1); /* Slightly darker on hover */
+  }
+
+  .nav-icons .icon-link img {
+      width: 24px;
+      height: 24px;
+  }
+
+  /* Existing Header Styles */
+  .main-header {
+      background-color: #333;
+      padding: 10px 0;
+  }
+
+  .main-nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+
+  .main-nav ul li {
+      margin: 0 15px;
+  }
+
+  .main-nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+  }
+
+  .main-nav ul li a:hover {
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 4px;
+  }
+</style>
 </head>
 <body>
+
+<!-- New Header -->
+<header>
+  <nav>
+    <a href="samplelogin.html">
+
+      <img src="/static/images/logo23.png" class="logo" alt="Logo">
+    </a>
+    <div class="nav-icons">
+      <a href="#" class="icon-link">
+        <img src="/static/images/user.png" alt="User Icon">
+      </a>
+    </div>
+  </nav>
+</header>
+<header class="main-header">
+  <nav class="main-nav">
+    <ul>
+      <li><a href="Vehicle.html">Vehicle</a></li>
+      <li><a href="servicebooking.html">Services</a></li>
+      <li><a href="Location.html">Location</a></li>
+      <li><a href="Schedule.html">Schedule</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="Payment.html">Payment</a></li>
+      <li><a href="Book.html">Book</a></li>
+    </ul>
+  </nav>
+
+</header>
 <div class="container">
   <include src="Header.html"></include>
   <main class="form-container">
