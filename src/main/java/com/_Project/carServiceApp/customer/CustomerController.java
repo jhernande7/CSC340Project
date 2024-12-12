@@ -74,5 +74,10 @@ public class CustomerController {
         return "samplelogin";
     }
 
+    @GetMapping("/serviceslist")
+    public String gotoServices(){
+        return "Vehicle";
+    }
+
 
 }

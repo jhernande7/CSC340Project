@@ -1,6 +1,11 @@
 package com._Project.carServiceApp.review;
 
+import com._Project.carServiceApp.customer.Customer;
+import com._Project.carServiceApp.provider.Provider;
 import jakarta.persistence.*;
+
+import java.util.Optional;
+
 
 @Entity
 @Table(name="reviewsdb")
@@ -8,17 +13,19 @@ public class Reviews {
     @Id
     private int revid;
 
-    private int fromid;
-    private int toid;
+    @ManyToOne
+    private Customer customer;
+    @ManyToOne
+    private Provider provider;
 
     private String message;
 
     //Constructor
-    public Reviews(int revid, int fromid, int toid, String text){
+    public Reviews(int revid,String text, Customer customer, Provider provider){
         this.revid = revid;
-        this.fromid = fromid;
-        this.toid = toid;
         this.message = text;
+        this.customer = customer;
+        this.provider = provider;
     }
     //default constructor
     public Reviews(){}
@@ -31,20 +38,6 @@ public class Reviews {
         this.revid = id3;
     }
 
-    public int getFromid() {
-        return this.fromid;
-    }
-    public void setFromid(int id){
-        this.fromid = id;
-    }
-
-    public int getToid(){
-        return this.toid;
-    }
-    public void setToid(int id2){
-        this.toid = id2;
-    }
-
     public String getMessage(){
         return this.message;
     }
@@ -52,4 +45,17 @@ public class Reviews {
         this.message = mes;
     }
 
+    public Customer getCustomer(){
+        return customer;
+    }
+    public void setCustomer(Customer cust){
+        this.customer=cust;
+    }
+
+    public Provider getProvider(){
+        return provider;
+    }
+    public void setProvider(Provider prov){
+        this.provider = prov;
+    }
 }

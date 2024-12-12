@@ -39,4 +39,8 @@ public class ReviewsServices {
     public void deletebyId(int reviewid){
         reviewsRepository.deleteById(reviewid);
     }
+
+    public Optional<Reviews> findByProviderId(Integer shopid){
+        return reviewsRepository.findById(shopid);
+    }
 }

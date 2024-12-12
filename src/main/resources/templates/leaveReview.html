@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Provider Reviews</title>
+  <link rel="stylesheet" th:href="@{/css/reviews.css}"/>
+</head>
+<body>
+
+<div class="container">
+  <h1>Reviews for Provider: <span th:text="${provider.name}"></span></h1>
+
+  <section class="review-form">
+    <h2>Leave a Review</h2>
+    <form th:action="@{/reviews/provider/{shopid}/add(providerId=${provider.shopid})}" method="post">
+      <input type="hidden" name="customerId" th:value="${#authentication.name}" />
+
+      <textarea name="content" placeholder="Write your review here..." required></textarea>
+
+      <button type="submit" class="btn submit-btn">Submit Review</button>
+    </form>
+  </section>
+
+  <section class="reviews-list">
+    <h2>All Reviews</h2>
+    <ul>
+      <li th:each="review : ${reviews}" class="review-card">
+        <div class="review-header">
+          <p class="customer-name"><strong>Customer:</strong> <span th:text="${review.customer.name}"></span></p>
+        </div>
+        <p class="review-content"><strong>Review:</strong> <span th:text="${review.content}"></span></p>
+      </li>
+    </ul>
+  </section>
+
+  <a class="btn back-btn" th:href="@{/}">Back to Home</a>
+</div>
+
+</body>
+</html>

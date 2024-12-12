@@ -14,7 +14,6 @@
     </a>
 
 
-
     <!-- added new drop down -->
 
       <ul>
@@ -133,14 +132,14 @@
 
 
     <div class="nav-icons">
-      <a href= "SignUp.html" class="btn-link">
+      <a th:href= "@{/provider/new}" class="btn-link">
         <button class="btn">
           <img th:src="@{/images/icon.png}" alt="Mechanic Icon"> Become A Mechanic
         </button>
       </a>
 
       <a href="#" class="icon-link"><img th:src="@{/images/search.png}" alt="Search Icon"></a>
-      <a href="login.html" class="icon-link"><img th:src="@{/images/user.png}" alt="User Icon"></a>
+      <a th:href="@{/customer/new}" class="icon-link"><img th:src="@{/images/user.png}" alt="User Icon"></a>
     </div>
   </nav>
 
@@ -503,7 +502,7 @@ New services section!
 
 
 <!-- Sticky Button -->
-<a href="Vehicle.html" class="sticky-button">GET AN ESTIMATE</a>
+<a th:href="@{/customer/serviceslist}" class="sticky-button">GET AN ESTIMATE</a>
 
 
 

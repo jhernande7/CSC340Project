@@ -10,12 +10,11 @@
 <div class="dashboard-container">
     <!-- Sidebar -->
     <aside class="sidebar">
-        <div class="logo">
+        <a href="samplelogin.html" class="logo">
             <img th:src="@{/images/logo23.png}" alt="my logo" class="logo-img">
-        </div>
+        </a>
         <ul class="menu">
             <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Services</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Portfolios</a></li>
             <li><a href="#">My Favourites</a></li>
@@ -34,42 +33,35 @@
                 </div>
                 <button class="post-project-btn">My Profile</button>
                 <button class="find-jobs-btn">Sell Services</button>
-
-
             </div>
         </header>
 
-        <!-- Cards -->
-        <div class="stats-cards">
-            <div class="card">
-                <h3>Earnings</h3>
-                <p>Lifetime: <strong>$0</strong></p>
-                <p>This Month: <strong>$0</strong></p>
-            </div>
-            <div class="card">
-                <h3>Ongoing Services</h3>
-                <p>Total: <strong>0</strong></p>
-                <p>Deadline: 7 days</p>
-            </div>
-            <div class="card">
-                <h3>Services Received</h3>
-                <p>This Month: <strong>0</strong></p>
-                <p>Last 7 Days: <strong>0</strong></p>
-            </div>
-            <div class="card">
-                <h3>Profile Views</h3>
-                <p>This Month: <strong>0</strong></p>
-                <p>Last 7 Days: <strong>0</strong></p>
-                <button class="share-btn">Share</button>
-            </div>
-        </div>
+        <!-- Add New Service Form -->
+        <section class="new-service">
+            <h2>Add New Service</h2>
+            <form th:action="@{/provider/add-service}" method="post">
+                <label for="serviceName">Service Name:</label>
+                <input type="text" id="serviceName" name="serviceName" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="price">Price ($):</label>
+                <input type="number" id="price" name="price" step="0.01" required>
+                <button type="submit">Add Service</button>
+            </form>
+        </section>
 
-        <!-- Welcome Section -->
-        <div class="welcome-section">
-            <img th:src="@{/images/coffeemechanic.png}" alt="Welcome" class="welcome-image">
-            <h2>Welcome to Car Service Finder</h2>
-            <p>Start your journey on CSF by making your profile on <a href="#">My Profile Section</a></p>
-        </div>
+        <!-- Services List -->
+        <section class="services-list">
+            <h2>My Services</h2>
+            <ul>
+                <li th:each="service : ${services}">
+                    <strong th:text="${service.serviceName}"></strong>
+                    <p th:text="${service.description}"></p>
+                    <p>Price: $<span th:text="${service.price}"></span></p>
+                    <button th:onclick="'deleteService(' + ${service.id} + ')'">Delete</button>
+                </li>
+            </ul>
+        </section>
     </main>
 </div>
 </body>

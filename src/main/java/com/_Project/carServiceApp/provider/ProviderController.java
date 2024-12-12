@@ -60,4 +60,6 @@ public class ProviderController {
         providerService.deleteById(shopid);
         return "redirect:/samplelogin";
     }
+
+
 }
